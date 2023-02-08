@@ -24,6 +24,17 @@ function show(a)
         localStorage.removeItem(a.email)
         parent.removeChild(child)
     }
+    var btn1=document.createElement('button')
+    btn1.appendChild(document.createTextNode('EDIT'))
+    btn1.onclick=()=>{
+        
+        localStorage.removeItem(a.email)
+        parent.removeChild(child)
+        document.getElementById('FirstName').value=a.firstName;
+        document.getElementById('lastName').value=a.lastName;
+        document.getElementById('Email').value=a.email;
+    }
+    child.appendChild(btn1)
     child.appendChild(btn);
     parent.appendChild(child);
 }
