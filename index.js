@@ -16,7 +16,15 @@ function show(a)
 {
     const parent=document.getElementById('listOfItems')
     const child=document.createElement('li')
+    var btn=document.createElement('button')
+    
     child.textContent=a.firstName+ "-"+a.lastName+"-"+a.email;
+    btn.appendChild(document.createTextNode('Delete'))
+    btn.onclick=()=>{
+        localStorage.removeItem(a.email)
+        parent.removeChild(child)
+    }
+    child.appendChild(btn);
     parent.appendChild(child);
 }
 
